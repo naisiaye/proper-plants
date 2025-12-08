@@ -1,0 +1,125 @@
+body {
+  background-color: rgb(197, 195, 173);
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-areas: ". root .";
+  font-family: "Cormorant", serif;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  column-gap: 3em;
+  grid-template-areas: "plants cart";
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2em;
+  row-gap: 2em;
+}
+
+li {
+  padding: 2em;
+  display: grid;
+  text-align: center;
+  row-gap: 1em;
+  box-shadow: 3px 3px 10px rgb(179, 168, 110);
+  border: thin solid palegoldenrod;
+  border-radius: 10px;
+}
+
+p {
+  margin: 0;
+}
+
+h3 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+button {
+  background-color: rgb(216, 210, 179);
+  color: white;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+
+.plant-pic {
+  font-size: 4em;
+}
+
+.plant-name {
+  font-size: 1.5em;
+}
+
+.cart-plant {
+  text-align: center;
+  font-size: 1.75em;
+}
+
+.cart-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#root {
+  grid-area: root;
+}
+
+#plant-list {
+  grid-area: plants;
+}
+
+#cart-items {
+  grid-area: cart;
+  height: max-content;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgb(179, 168, 110);
+  border: thin solid palegoldenrod;
+}
+
+@media screen and (max-width: 1024px) {
+  ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cart-buttons {
+    margin: auto 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1em;
+  }
+  ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  main {
+    grid-template-columns: 1fr;
+    row-gap: 2em;
+    grid-template-areas:
+      "cart"
+      "plants";
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+}
