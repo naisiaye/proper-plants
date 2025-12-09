@@ -23,6 +23,7 @@ export default function App() {
       setCartItems([...cartItems, addPlant]);
     }
   };
+
   return (
     <>
       <header>
